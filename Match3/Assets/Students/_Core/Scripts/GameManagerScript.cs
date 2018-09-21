@@ -28,13 +28,15 @@ public class GameManagerScript : MonoBehaviour {
 	}
 
 	public virtual void Update(){
-		if(!GridHasEmpty()){
-			if(matchManager.GridHasMatch()){
-				matchManager.RemoveMatches();
+		if(!GridHasEmpty()){ //if the grid has no empty spots
+			if(matchManager.GridHasMatch()){ //check if it has a match or not
+				matchManager.RemoveMatches(); //remove the matches if it has
 			} else {
-				inputManager.SelectToken();
+				inputManager.SelectToken(); //let manager check to see if we clicked on a token
 			}
-		} else {
+		}
+
+        else {
 			if(!moveTokenManager.move){
 				moveTokenManager.SetupTokenMove();
 			}

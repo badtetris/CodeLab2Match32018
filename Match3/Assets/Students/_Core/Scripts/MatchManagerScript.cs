@@ -150,6 +150,7 @@ public class MatchManagerScript : MonoBehaviour {
 						}
 					}
 				}
+
                 if (y < gameManager.gridHeight - 2)
                 {
 
