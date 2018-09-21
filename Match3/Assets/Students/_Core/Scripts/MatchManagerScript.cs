@@ -105,7 +105,7 @@ public class MatchManagerScript : MonoBehaviour {
 
             for (int i = y + 1; i < gameManager.gridHeight; i++)
             {
-                GameObject other = gameManager.gridArray[i, y];
+                GameObject other = gameManager.gridArray[x, i];
 
                 if (other != null)
                 {
