@@ -141,12 +141,18 @@ public class MatchManagerScript : MonoBehaviour {
 
 					if(horizonMatchLength > 2){
 
-						for(int i = x; i < x + horizonMatchLength; i++){
+                        SoundManager.PlaySound("MadeMatch");
+
+                        for (int i = x; i < x + horizonMatchLength; i++){
 							GameObject token = gameManager.gridArray[i, y]; 
 							Destroy(token);
 
-							gameManager.gridArray[i, y] = null;
+                            ScoreCount.scoreValue++; //adds num of tokens destroyed to the score
+
+                            gameManager.gridArray[i, y] = null;
 							numRemoved++;
+
+                            
 						}
 					}
 				}
@@ -158,14 +164,20 @@ public class MatchManagerScript : MonoBehaviour {
 
                     if (vertMatchLength > 2)
                     {
+                        SoundManager.PlaySound("MadeMatch");
+                        Debug.Log("sound played");
 
                         for (int i = y; i < y + vertMatchLength; i++)
                         {
                             GameObject token = gameManager.gridArray[x, i];
                             Destroy(token);
 
+                            ScoreCount.scoreValue++; //adds num of tokens destroyed to the score
+
                             gameManager.gridArray[x, i] = null;
                             numRemoved++;
+
+                            
                         }
                     }
                 }

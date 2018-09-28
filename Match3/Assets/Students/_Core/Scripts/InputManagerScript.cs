@@ -21,7 +21,8 @@ public class InputManagerScript : MonoBehaviour {
 			if(collider != null){
 				if(selected == null){
 					selected = collider.gameObject;
-				} else {
+                    
+                } else {
 					Vector2 pos1 = gameManager.GetPositionOfTokenInGrid(selected);
 					Vector2 pos2 = gameManager.GetPositionOfTokenInGrid(collider.gameObject);
 
@@ -32,7 +33,9 @@ public class InputManagerScript : MonoBehaviour {
 					selected = null;
 				}
 			}
-		}
+
+            
+        }
 
 	}
 

@@ -18,7 +18,7 @@ public class GameManagerScript : MonoBehaviour {
 	GameObject selected;
 
 	public virtual void Start () {
-		tokenTypes = (Object[])Resources.LoadAll("_Core/Tokens/");
+		tokenTypes = (Object[])Resources.LoadAll("_Core/Tokens/NewTokens/");
 		gridArray = new GameObject[gridWidth, gridHeight];
 		MakeGrid();
 		matchManager = GetComponent<MatchManagerScript>();
@@ -31,7 +31,7 @@ public class GameManagerScript : MonoBehaviour {
 		if(!GridHasEmpty()){ //if the grid has no empty spots
 			if(matchManager.GridHasMatch()){ //check if it has a match or not
 				matchManager.RemoveMatches(); //remove the matches if it has
-			} else {
+            } else {
 				inputManager.SelectToken(); //let manager check to see if we clicked on a token
 			}
 		}
