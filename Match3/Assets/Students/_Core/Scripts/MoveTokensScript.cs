@@ -107,8 +107,8 @@ public class MoveTokensScript : MonoBehaviour {
 
 		for(int x = 0; x < gameManager.gridWidth; x++){
 			for(int y = 1; y < gameManager.gridHeight ; y++){
-				if(gameManager.gridArray[x, y - 1] == null){
-					for(int pos = y; pos < gameManager.gridHeight; pos++){
+				if(gameManager.gridArray[x, y - 1] == null && gameManager.gridArray[x, y] != null){ //check if tile below this tile is empty
+					for(int pos = y; pos < gameManager.gridHeight; pos++){ //go through every tile (including th
 						GameObject token = gameManager.gridArray[x, pos];
 						if(token != null){
 							MoveTokenToEmptyPos(x, pos, x, pos - 1, token);
